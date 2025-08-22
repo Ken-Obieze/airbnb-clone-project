@@ -16,10 +16,7 @@ A robust, scalable backend for an Airbnb-style marketplace that manages users, p
 * [🔩 Feature Breakdown](#-feature-breakdown)
 * [🔐 API Security](#-api-security)
 * [🚢 CI/CD Pipeline](#-cicd-pipeline)
-* [📦 Project Initialization](#-project-initialization-mandatory)
 * [📚 Technology Stack (Details)](#-technology-stack-details)
-* [🧭 Development Conventions](#-development-conventions)
-* [✅ Next Steps](#-next-steps)
 
 ---
 
@@ -233,3 +230,23 @@ Provide a solid foundation for user interactions, property listings, bookings, a
 * **Payment Safety**: Idempotency keys; webhook signature verification; PCI‑aware provider delegation (no raw PAN storage).
 * **Audit & Monitoring**: Structured logs, trace IDs, admin audit trail, anomaly alerts.
 * **CORS/CSRF**: Tight CORS; CSRF protection for session flows (if used).
+
+---
+
+## 🚢 CI/CD Pipeline
+
+* **CI**: On PRs → run linters, type checks, unit/integration tests; build Docker image; generate OpenAPI schema; upload coverage.
+* **CD**: On main tag → push image; run DB migrations; deploy to env (staging → prod) with health checks and blue/green/rolling strategy.
+* **Tools**: GitHub Actions, Docker, docker‑compose, PostgreSQL, Redis, Celery worker, and a target (Render/Heroku/Fly.io/ECS/Kubernetes).
+* **Quality Gates**: Required status checks; automated security scans (pip‑audit, trivy), secret scanners, and dependency pinning.
+
+---
+
+## 📚 Technology Stack (Details)
+
+* **Django**: URL routing, ORM, auth; settings separated by env (dev/stage/prod).
+* **DRF**: Serializers, ViewSets, Routers, filtering, pagination, throttling.
+* **GraphQL**: Separate `/graphql` with schema stitching to reuse domain logic.
+* **PostgreSQL**: Strict FK constraints; migrations tracked in VCS.
+* **Celery + Redis**: Background jobs (emails, webhooks, image processing), retries with exponential backoff and dead‑lettering.
+* **Docker**: One‑command local up (app, db, redis); reproducible builds.
