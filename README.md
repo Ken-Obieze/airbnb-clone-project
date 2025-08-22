@@ -208,3 +208,16 @@ Provide a solid foundation for user interactions, property listings, bookings, a
 * **Search**: GIN on `amenities`, trigram on `title`/`city` (optional)
 * **Dates**: composite index `(property_id, start_date, end_date)`
 * **No overlapping bookings**: PostgreSQL exclusion constraint on date ranges per `property_id`
+
+---
+
+## 🔩 Feature Breakdown
+
+* **User Management**: Sign‑up/login with JWT (access/refresh), email verification, password reset, profile edit, role‑based views (guest/host/admin).
+* **Property Management**: Hosts create and manage listings, upload photos, set pricing and availability, and toggle status; clients browse with rich filters.
+* **Booking System**: Real‑time availability checks, conflict prevention, cancellation policies, and host/guest notifications.
+* **Payment Processing**: Initiate and confirm charges, handle 3‑DS/OTP flows where applicable, verify webhooks, support refunds, and ensure idempotency.
+* **Reviews**: Guests post ratings/comments tied to completed stays; moderation and spam controls.
+* **Admin Ops**: Dashboards for user/property moderation, dispute handling, refunds, and metrics.
+
+---
