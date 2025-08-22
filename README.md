@@ -92,3 +92,14 @@ Provide a solid foundation for user interactions, property listings, bookings, a
 * **CI/CD Pipelines**: GitHub Actions for lint/test/build/migrate/deploy.
 
 ---
+
+## 👥 Team Roles
+
+> Inspired by the project overview and standard SDLC role definitions.
+
+* **Backend Developer**: Designs domain models; implements REST/GraphQL endpoints, business logic, validations; writes tests; handles performance profiling.
+* **Database Administrator (DBA)**: Owns schema evolution, indexing strategy, backups, PITR, and performance tuning.
+* **DevOps Engineer**: Builds CI/CD, container orchestration, observability (logs/metrics/traces), scaling, and secret management.
+* **QA Engineer**: Test plans, automated API/UI tests, regression suites, load tests, and release sign‑off.
+* **Security Engineer** *(optional/overlapping)*: Threat modeling, dependency scanning, secret rotation, incident response.
+* **Product Manager** *(optional)*: Requirements, prioritization, roadmap, and acceptance criteria.
