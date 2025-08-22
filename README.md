@@ -221,3 +221,15 @@ Provide a solid foundation for user interactions, property listings, bookings, a
 * **Admin Ops**: Dashboards for user/property moderation, dispute handling, refunds, and metrics.
 
 ---
+
+## 🔐 API Security
+
+* **Authentication**: JWT (access + refresh); optional OAuth (Google/Apple). Passwords hashed with Argon2 or bcrypt.
+* **Authorization**: Role‑based access control (RBAC) and object‑level permissions (hosts can only mutate their listings; guests only their bookings, etc.).
+* **Input Validation**: Serializer/schema validation; length/type checks; strict file upload limits.
+* **Rate Limiting**: DRF throttling and/or API gateway/NGINX limits (IP + user‑key).
+* **Transport Security**: HTTPS everywhere; HSTS; secure cookies for session‑based flows.
+* **Secret Management**: Environment variables, rotation, and minimal scope tokens.
+* **Payment Safety**: Idempotency keys; webhook signature verification; PCI‑aware provider delegation (no raw PAN storage).
+* **Audit & Monitoring**: Structured logs, trace IDs, admin audit trail, anomaly alerts.
+* **CORS/CSRF**: Tight CORS; CSRF protection for session flows (if used).
